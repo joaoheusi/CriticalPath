@@ -2,18 +2,6 @@ import networkx as nx
 
 g = nx.DiGraph()
 
-""" g.add_nodes_from(['A','B','C','D','E','F','G'])
-
-g.add_weighted_edges_from([('A','B',14),
-                           ('B','C',20),
-                           ('B','D',20),
-                           ('C','D',3),
-                           ('D','E',8),
-                           ('D','F',13),
-                           ('E','F',11),
-                           ('F','G',20)])      
-"""
-
 
 nodeList = ['1','2','3','4','5','6','Fim']
 weightsList = [10,4,7,5,5,2,0]
@@ -83,16 +71,9 @@ addNodes(g)
 addEdges(g)
 
 
-""" print(list(g.nodes())) """
-
 paths = [path for path in nx.all_simple_paths(g,'1','Fim')]
 
 
 print(critical_path(g,paths))
 print(find_gaps(g,paths))
 print(paths)
-
-""" for edge in g.edges():
-    print(edge)
-    print(g.get_edge_data(edge[0],edge[1]))
-"""
